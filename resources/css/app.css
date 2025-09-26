@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #f8f9fa;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    }
+    .card {
+        @apply bg-white shadow-md rounded-lg p-6;
+    }
+    .card-header {
+        @apply text-xl font-bold mb-4;
+    }
+    .card-body {
+        @apply text-gray-700;
+    }
+    .navbar {
+        @apply bg-white shadow-md;
+    }
+    .navbar a {
+        @apply text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium;
+    }
+}
+
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .bg-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .hover-scale:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
