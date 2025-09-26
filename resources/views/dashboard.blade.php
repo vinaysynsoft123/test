@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Welcome To Dashboard') }}
         </h2>
     </x-slot>
 
-    <div class="container">
+    <div class="container p-4">
 
-        <h1 class="text-3xl font-bold text-center text-blue-600">Hello Tailwind!</h1>
+        
 
         <!-- Single Row: 4 Boxes -->
         <div class="flex gap-4 justify-center align-items-center text-center">
@@ -20,7 +20,7 @@
             </div>
 
             <!-- Active Students -->
-                <div class="bg-red-500 shadow-md rounded-lg p-4">
+                <div class="bg-white shadow-md rounded-lg p-4">
                     <div class="panel-heading">Active Students</div>
                     <div class="panel-body">
                         <h3>{{ $activeStudents }}</h3>
@@ -28,7 +28,7 @@
             </div>
 
             <!-- Pending Students -->
-                <div class="bg-white shadow-md rounded-lg p-4">
+                <div class="bg-red-500 shadow-md rounded-lg p-4">
                     <div class="panel-heading">Pending Students</div>
                     <div class="panel-body">
                         <h3>{{ $pendingStudents }}</h3>
