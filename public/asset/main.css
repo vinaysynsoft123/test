@@ -2,11 +2,11 @@
 
         /* Navbar */
         .navbar {
-            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            background: linear-gradient(90deg, #c56ac1, #1c9b9b);
             transition: all 0.3s;
         }
         .navbar.scrolled {
-            background: linear-gradient(90deg, #0b5ed7, #520dc2);
+            background: linear-gradient(90deg, #c56ac1, #1c9b9b);
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
         .navbar .nav-link {
@@ -48,18 +48,18 @@
         .hero-section {
             position: relative;
             height: 50vh;
-            background: url('{{ asset("images/banner1.jpg") }}') center/cover no-repeat;
+            background-color: #e5e8eb;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
-        .hero-section::after {
+        /* .hero-section::after {
             content: '';
             position: absolute;
             inset: 0;
             background-color: rgba(0,0,0,0.5);
-        }
+        } */
         .hero-section .hero-content {
             position: relative;
             color: #fff;
@@ -219,11 +219,8 @@
         font-size: 2rem;
         font-weight: 700;
     }
-     .stats-section {
-        background: linear-gradient(135deg, #0d6efd, #6610f2);
-        color: #fff;
-        position: relative;
-    }
+   
+    
     .stat-box h3 {
         font-size: 2.5rem;
         font-weight: 700;
@@ -359,7 +356,8 @@ section.py-5.bg-white .container {
     z-index: 1;
 }
 .stats-section {
-        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        background: linear-gradient(135deg, #7498cd, #34126c);
+        
         color: #fff;
         position: relative;
     }
@@ -372,3 +370,23 @@ section.py-5.bg-white .container {
         font-size: 1rem;
         opacity: 0.9;
     }
+
+    .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: #0d6efd;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+.timeline-content {
+    text-align: left;
+}

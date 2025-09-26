@@ -96,7 +96,7 @@
     </div>
 </section>
 <!-- Statistics Section --><!-- Statistics Section -->
-<section class="stats-section py-5 bg-light">
+<section class="stats-section py-5">
     <div class="container text-center">
         <h2 class="fw-bold mb-5 text-dark">📊 Our Achievements</h2>
         <div class="row g-4">

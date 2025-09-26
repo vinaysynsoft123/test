@@ -63,39 +63,41 @@
     </div>
 </section>
 
-<!-- Team Section -->
-<section class="py-5 bg-light text-center">
+
+<section class="py-5">
     <div class="container">
-        <h2 class="mb-5 fw-bold">👨‍💻 Meet Our Team</h2>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 border-0 shadow team-card">
-                    <img src="{{ asset('images/team1.jpg') }}" class="card-img-top rounded-top" alt="Team Member 1">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Vinay Pal</h5>
-                        <p class="card-text text-muted">Founder & Lead Developer</p>
-                    </div>
+        <h2 class="mb-5 text-center fw-bold">🚀 Founder’s Journey</h2>
+        <ul class="timeline list-unstyled position-relative mx-auto" style="max-width: 700px;">
+            <!-- Timeline Item -->
+            <li class="mb-5 position-relative">
+                <div class="timeline-dot bg-primary position-absolute start-50 translate-middle rounded-circle"></div>
+                <div class="timeline-content bg-white p-4 shadow rounded position-relative" style="width: 90%; margin-left: auto; margin-right: auto;">
+                    <h5 class="fw-bold">2015 - Started Career</h5>
+                    <p class="text-muted mb-0">Vinay began his journey as a junior developer, learning Laravel and frontend technologies.</p>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 border-0 shadow team-card">
-                    <img src="{{ asset('images/team2.jpg') }}" class="card-img-top rounded-top" alt="Team Member 2">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Jane Doe</h5>
-                        <p class="card-text text-muted">Frontend Designer</p>
-                    </div>
+            </li>
+            <li class="mb-5 position-relative">
+                <div class="timeline-dot bg-primary position-absolute start-50 translate-middle rounded-circle"></div>
+                <div class="timeline-content bg-white p-4 shadow rounded position-relative" style="width: 90%; margin-left: auto; margin-right: auto;">
+                    <h5 class="fw-bold">2017 - First Startup</h5>
+                    <p class="text-muted mb-0">Founded his first tech startup, focusing on web development services for SMEs.</p>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="card h-100 border-0 shadow team-card">
-                    <img src="{{ asset('images/team3.jpg') }}" class="card-img-top rounded-top" alt="Team Member 3">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">John Smith</h5>
-                        <p class="card-text text-muted">Backend Developer</p>
-                    </div>
+            </li>
+            <li class="mb-5 position-relative">
+                <div class="timeline-dot bg-primary position-absolute start-50 translate-middle rounded-circle"></div>
+                <div class="timeline-content bg-white p-4 shadow rounded position-relative" style="width: 90%; margin-left: auto; margin-right: auto;">
+                    <h5 class="fw-bold">2020 - Insta-Laravel Launch</h5>
+                    <p class="text-muted mb-0">Launched Insta-Laravel, a clean and responsive Blade template to help Laravel developers.</p>
                 </div>
-            </div>
-        </div>
+            </li>
+            <li class="mb-5 position-relative">
+                <div class="timeline-dot bg-primary position-absolute start-50 translate-middle rounded-circle"></div>
+                <div class="timeline-content bg-white p-4 shadow rounded position-relative" style="width: 90%; margin-left: auto; margin-right: auto;">
+                    <h5 class="fw-bold">2025 - Expanding Team</h5>
+                    <p class="text-muted mb-0">Now leading a talented team, Vinay continues to mentor and build professional web solutions.</p>
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
 
