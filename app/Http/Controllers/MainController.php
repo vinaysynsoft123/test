@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Mail\StudentRegistrationMail;
+use App\Mail\AdminStudentNotificationMail;
+use Illuminate\Support\Facades\Mail;
 class MainController extends Controller
 {
     public function index()
@@ -28,25 +31,27 @@ class MainController extends Controller
     }
 
 
-   public function submit(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
-        'phone' => 'required|string|max:20',
-        'class' => 'required|string|max:50',
-        'message' => 'nullable|string|max:1000',
-    ]);
+    public function submit(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'class' => 'required|string|max:50',
+            'message' => 'nullable|string|max:1000',
+        ]);
 
-    Student::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'mobile' => $request->phone,
-        'class' => $request->class,
-        'message' => $request->message,
-        'status' => 'pending',
-    ]);
+       $student=  Student::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->phone,
+            'class' => $request->class,
+            'message' => $request->message,
+            'status' => 'pending',
+        ]);
 
-    return back()->with('success', 'Your registration has been submitted successfully!');
-}
+        Mail::to($student->email)->send(new StudentRegistrationMail($student));    
+        Mail::to('vinaymit15@gmail.com')->send(new AdminStudentNotificationMail($student));
+        return back()->with('success', 'Your registration has been submitted successfully!');
+    }
 }

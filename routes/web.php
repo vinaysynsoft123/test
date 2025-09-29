@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/students', [ProfileController::class, 'students'])->name('students');
+    Route::get('/admin/student/{id}', [ProfileController::class, 'viewStudent'])->name('admin.student.view');
+    Route::patch('/student/activate/{id}', [ProfileController::class, 'activateStudent'])->name('student.activate');
 
 });
 

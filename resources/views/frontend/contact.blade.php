@@ -1,6 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('title', 'Contact Us')
+@section('description', 'Get in touch with the Insta-Laravel team for support, inquiries, or feedback. We are here to help you!')
 
 @section('content')
 <!-- Hero Section -->

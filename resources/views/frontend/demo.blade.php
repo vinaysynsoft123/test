@@ -1,6 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('title', 'Spoken English Class')
+@section('description', 'Join our Spoken English class to improve your communication skills. Register now for a free demo session!')
 
 @section('content')
 <!-- Hero Section -->

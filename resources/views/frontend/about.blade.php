@@ -1,13 +1,16 @@
 @extends('frontend.layouts.main')
 
 @section('title', 'About Us')
+@section('description', 'Learn more about Insta-Laravel, our mission, vision, and the team behind this project.')
 
 @section('content')
 <!-- Hero Section -->
 <section class="py-5 text-center mt-5" style="background-color: #e9ebee;">
     <div class="container">
         <h1 class="display-5 fw-bold">About Insta-Laravel</h1>
-        <p class="lead text-muted">Learn more about our mission, vision, and team.</p>
+        <p class="lead text-muted"> Insta-Laravel is built to provide a simple, clean, and responsive Laravel Blade template for developers.
+                    Our goal is to make it easy for anyone to start building social platforms, blogs, or community websites.
+       </p>
     </div>
 </section>
 
@@ -109,6 +112,4 @@
         <a href="{{ url('/register') }}" class="btn btn-lg btn-warning fw-bold shadow">Get Started</a>
     </div>
 </section>
-
-
 @endsection

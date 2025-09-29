@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Student;
+use App\Models\Subscription;
+use Illuminate\Support\Carbon;
 
 class ProfileController extends Controller
 {
@@ -73,7 +75,59 @@ class ProfileController extends Controller
 
     function students()
     {
-        $students = Student::all();
+        $students =  Student::orderby('id','desc')->get();
         return view('profile.student', compact('students'));
     }
+
+
+
+    function viewStudent($id)
+    {
+        $student = Student::findOrFail($id);
+
+    // Get active subscription (if any)
+    $activeSubscription = $student->subscriptions()
+        ->where('status', 'active')
+        ->whereDate('end_date', '>=', Carbon::now())
+        ->latest('end_date')
+        ->first();
+
+    return view('profile.view_student', compact('student', 'activeSubscription'));
+    }
+
+public function activateStudent(Request $request, $id)
+{
+    $student = Student::findOrFail($id);
+
+    // Check if student already has active subscription
+    $existing = $student->subscriptions()
+        ->where('status', 'active')
+        ->whereDate('end_date', '>=', Carbon::now())
+        ->first();
+
+    if ($existing) {
+        return redirect()->back()->with('error', 'Student already has an active subscription.');
+    }
+
+    $plan = $request->input('plan');
+    if (!in_array($plan, ['6_months','1_year'])) {
+        return redirect()->back()->with('error', 'Invalid plan selected.');
+    }
+
+    $start_date = Carbon::now();
+    $end_date = $plan === '1_year' ? $start_date->copy()->addYear() : $start_date->copy()->addMonths(6);
+
+    Subscription::create([
+        'student_id' => $student->id,
+        'plan' => $plan,
+        'start_date' => $start_date,
+        'end_date' => $end_date,
+        'status' => 'active',
+    ]);
+
+    $student->status = 'active';
+    $student->save();
+
+    return redirect()->back()->with('success', 'Subscription activated successfully.');
+}
 }

@@ -20,6 +20,7 @@
                                 <th>Class</th>
                                 <th>status</th>
                                 <th>Created At</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,6 +33,9 @@
                                     <td>{{ $student->class }}</td>
                                     <td>{{ ucfirst($student->status) }}</td>
                                     <td>{{ $student->created_at->format('d M Y') }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.student.view', $student->id) }}" class="text-blue-600 hover:text-blue-900">View
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -47,9 +51,12 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#students-table').DataTable();
+   <script>
+    $(document).ready(function () {
+        $('#students-table').DataTable({
+            "order": [[0, "desc"]]  // 0 = first column (ID)
         });
-    </script>
+    });
+</script>
+
 </x-app-layout>

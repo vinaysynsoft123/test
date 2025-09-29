@@ -1,8 +1,10 @@
 @extends('frontend.layouts.main')
 
 @section('title', 'Home')
+@section('description', 'Insta-Laravel is a fully Blade-based Laravel frontend template. Perfect for social platforms, blogs, and beginner-friendly projects.')
 
 @section('content')
+@    
 
 <!-- Banner Slider -->
 <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
@@ -140,84 +142,6 @@
     </div>
 </section>
 
-<!-- Counter Animation Script -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".counter");
-        const speed = 200;
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute("data-target");
-                    const count = +counter.innerText;
-                    const inc = Math.ceil(target / speed);
-
-                    if (count < target) {
-                        counter.innerText = count + inc;
-                        setTimeout(updateCount, 40);
-                    } else {
-                        counter.innerText = target + "+";
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector(".stats-section"));
-    });
-</script>
-
-
-
-<!-- Counter Animation Script -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".counter");
-        const speed = 200; // lower = faster
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute("data-target");
-                    const count = +counter.innerText;
-
-                    // Increment
-                    const inc = Math.ceil(target / speed);
-
-                    if (count < target) {
-                        counter.innerText = count + inc;
-                        setTimeout(updateCount, 40);
-                    } else {
-                        counter.innerText = target + "+";
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        // Run animation when section is in view
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector(".stats-section"));
-    });
-</script>
 
 
 
@@ -268,6 +192,84 @@
 
 @endsection
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+        const speed = 200; // lower = faster
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText;
+
+                    // Increment
+                    const inc = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + inc;
+                        setTimeout(updateCount, 40);
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Run animation when section is in view
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector(".stats-section"));
+    });
+</script>
+<!-- Counter Animation Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText;
+                    const inc = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + inc;
+                        setTimeout(updateCount, 40);
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector(".stats-section"));
+    });
+</script>
+
+
+
+<!-- Counter Animation Script -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const counters = document.querySelectorAll(".counter");

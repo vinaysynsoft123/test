@@ -12,4 +12,10 @@ class Student extends Model
     protected $fillable = [
         'name', 'email', 'mobile', 'address', 'status', 'message', 'class',
     ];
+
+    public function subscriptions()
+{
+    return $this->hasMany(Subscription::class);
+}
+
 }
